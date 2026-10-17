@@ -20,12 +20,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-tzteh8yyz2kx6abwpr!-&--7-olf&8j$^hkw1&w#@q$2&i@p+m'
+import os
+
+from pathlib import Path
+
+SECRET_KEY = Path('/home/lukaswp/.django_secret_key').read_text().strip() 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lukaswp.pythonanywhere.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
